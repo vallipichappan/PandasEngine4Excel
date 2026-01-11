@@ -1,0 +1,76 @@
+[tool.poetry]
+name = "excesior"
+version = "0.1.2"
+description = ""
+authors = 
+readme = "README.md"
+
+[[tool.poetry.source]]
+name = "jfrog"
+url = ""
+priority = "primary"
+
+[build-system]
+build-backend = "poetry.core.masonry.api"
+requires = ["poetry-core"]
+
+[tool.black]
+target-version = ['py311']
+
+[tool.datamodel-codegen]
+input-file-type = "openapi"
+output-model-type = "pydantic_v2.BaseModel"
+target-python-version = "3.11"
+use-standard-collections = "true"
+
+
+[tool.poetry.dependencies]
+python = "^3.11"
+torch = {version = "*", optional = true}
+requests = ">=2.32.3,<3.0.0"
+fastapi = "0.115.0"
+boto3 = "1.36.2"
+uvicorn = ">=0.34.0,<0.35.0"
+opentelemetry-distro = ">=0.47b0,<0.52"
+opentelemetry-exporter-otlp = ">=1.26.0,<2.0.0"
+opentelemetry-api = ">=1.26.0,<2.0.0"
+pandas = ">=2.2.2,<3.0.0"
+pillow = ">=11.1.0,<12.0.0"
+numpy = "2.1.0"
+opentelemetry-exporter-otlp-proto-common = ">=1.26.0,<2.0.0"
+opentelemetry-exporter-otlp-proto-grpc = ">=1.26.0,<2.0.0"
+opentelemetry-exporter-otlp-proto-http = ">=1.26.0,<2.0.0"
+opentelemetry-semantic-conventions = "^0.47b0"
+opentelemetry-instrumentation-requests = "^0.47b0"
+opentelemetry-instrumentation-logging = "^0.47b0"
+pyyaml = ">=5.3,<7.0.0"
+regex = ">=2024.11.6,<2025.0.0"
+opentelemetry-proto = ">=1.26.0,<2.0.0"
+opentelemetry-sdk = ">=1.26.0,<2.0.0"
+opentelemetry-instrumentation = ">=0.47b0,<0.52"
+python-dotenv = ">=1.0.1,<2.0.0"
+openpyxl = "3.1.5"
+streamlit = "^1.38.0"
+packaging = ">=23.2"
+typing-extensions = "^4.7"
+llama-index-core = "^0.12.34.post1"
+llama-index-experimental = "^0.5.5"
+llama-index-llms-langchain = "^0.6.1"
+llama-index = "^0.12.34"
+langchain = "^0.13.0"
+mistral-common = "^1.5.4"
+mistralai = "^1.7.0"
+
+langchain-community = "^0.3.23"
+[tool.poetry.group.dev.dependencies]
+black = "^23.11.0"
+coverage = "^7.3.2"
+poetry = "^1.6.1"
+pytest = "^8.2.1"
+pytest-cov = "^5.0.0"
+pytest_httpserver = "^1.0.10"
+
+deptry = "^0.23.0"
+[tool.pytest_ini_options]
+log_cli = true
+log_cli_level = "INFO"
